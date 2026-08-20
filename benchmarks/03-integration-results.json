@@ -3,13 +3,13 @@
   "mean_ms": {
     "embed": 0.0,
     "retrieve": 0.0,
-    "llm": 2893.7,
-    "total": 2893.8
+    "llm": 7145.2,
+    "total": 7145.2
   },
   "results": [
     {
       "query": "Why is goodput more useful than raw throughput?",
-      "answer": "Goodput@SLO counts only the requests per second that met the TTFT and TPOT targets. Throughput at saturation ignores SLOs.",
+      "answer": "The user is asking about the difference between **goodput** and **raw throughput** in the context of LLMs.\n\n**1. Goodput:**\n*   **Definition:** Goodput is a specific metric that is often used to represent the **best-effort** or **best-effort** performance of the model. It is a subset of the broader \"goodput\" metric.\n*   **Context:** It is often used to measure the quality of the model's output.\n*   **Mechanism:** It is a subset of the broader \"goodput\" metric.\n\n**2. Raw Throughput:**\n*   **Definition:** Throughput is a fundamental metric.\n*   **Context:** It is often used to measure the quality of the model's output.\n*   **Mechanism:** It is often used to measure the quality of the model's output.\n\n**Conclusion:**\nGoodput is a subset of the broader \"goodput\" metric",
       "contexts": [
         {
           "id": "goodput",
@@ -28,19 +28,19 @@
       "timings_ms": {
         "embed": 0.0,
         "retrieve": 0.0,
-        "llm": 3067.6,
-        "total": 3067.7
+        "llm": 8408.3,
+        "total": 8408.4
       },
       "server_timings": {
-        "prompt_n": 149,
-        "prompt_ms": 325.314,
-        "predicted_n": 30,
-        "predicted_ms": 368.502
+        "prompt_n": 151,
+        "prompt_ms": 2284.658,
+        "predicted_n": 200,
+        "predicted_ms": 5878.318
       }
     },
     {
       "query": "What problem does PagedAttention actually solve?",
-      "answer": "PagedAttention stores the KV cache in non-contiguous pages, removing the internal fragmentation that wasted most GPU memory.",
+      "answer": "The question is not a valid question.\n\nPagedAttention is a specific implementation of the Attention mechanism.\n\nThe question asks \"what problem it solves\", which refers to the **Attention problem** in the context of the **Attention mechanism** (specifically `pagedAttention` or `pagedAttention`), not the general problem of the entire model.\n\nThe context provided is:\n> \"PagedAttention stores the KV cache in non-contiguous pages, removing the internal fragmentation that wasted most GPU memory.\"\n\nThis context describes the **problem** (the internal fragmentation) that the **solution** (PagedAttention) solves.\n\nThe **problem** is the **Attention problem**.\n\nThe **solution** is the **Attention mechanism**.\n\nTherefore, the context describes the **problem** (the internal fragmentation) that the **solution** (PagedAttention) solves.\n\nThe **problem** is the **Attention problem**.\n\nThe **solution** is the **Attention mechanism**.",
       "contexts": [
         {
           "id": "paged",
@@ -59,19 +59,19 @@
       "timings_ms": {
         "embed": 0.0,
         "retrieve": 0.0,
-        "llm": 2797.9,
-        "total": 2798.0
+        "llm": 7466.9,
+        "total": 7466.9
       },
       "server_timings": {
         "prompt_n": 114,
-        "prompt_ms": 210.22,
-        "predicted_n": 23,
-        "predicted_ms": 333.07
+        "prompt_ms": 1484.776,
+        "predicted_n": 200,
+        "predicted_ms": 5916.37
       }
     },
     {
       "query": "When does splitting prefill and decode help?",
-      "answer": "Splitting prefill and decode helps because prefill is compute-bound and decode is memory-bandwidth-bound.",
+      "answer": "The context provided does not contain the specific answer to the question \"When does splitting prefill and decode help?\" directly.\n\nHowever, the context highlights a **conceptual principle** (that prefilling is compute-bound and decoding is memory-bound) to explain how different approaches are used in the context of the model.\n\nBased on this context, **splitting prefill and decode** is generally considered to be **less effective or necessary** than using **continuous batching**.\n\n*   **Continuous Batching** allows requests to join and leave the running batch.\n*   **Splitting** (as mentioned in the context) is a different mechanism.\n\nTherefore, the answer to the question is: **Continuous batching is the method that helps.**",
       "contexts": [
         {
           "id": "disagg",
@@ -90,14 +90,14 @@
       "timings_ms": {
         "embed": 0.0,
         "retrieve": 0.0,
-        "llm": 2815.6,
-        "total": 2815.6
+        "llm": 5560.3,
+        "total": 5560.3
       },
       "server_timings": {
         "prompt_n": 113,
-        "prompt_ms": 214.2,
-        "predicted_n": 24,
-        "predicted_ms": 340.968
+        "prompt_ms": 1335.011,
+        "predicted_n": 152,
+        "predicted_ms": 4106.316
       }
     }
   ]

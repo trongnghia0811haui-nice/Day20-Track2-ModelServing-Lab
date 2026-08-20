@@ -1,30 +1,30 @@
 {
   "runtime_environment": "local",
   "cpu": {
-    "arch": "AMD64",
-    "cores_logical": 12,
+    "arch": "x86_64",
+    "cores_logical": 4,
     "model": "12th Gen Intel(R) Core(TM) i5-12450H",
-    "cores_physical": 8
+    "avx2": true,
+    "avx512": false,
+    "neon": false,
+    "cores_physical": 4
   },
-  "ram_gb": 15.7,
+  "ram_gb": 5.4,
   "gpu": {
     "backends": {
-      "nvidia_cuda": true,
+      "nvidia_cuda": false,
       "amd_rocm": false,
       "apple_metal": false,
-      "vulkan": true,
-      "cpu_only": false
+      "vulkan": false,
+      "cpu_only": true
     },
-    "details": {
-      "nvidia": "NVIDIA GeForce RTX 3050 Ti Laptop GPU, 4096 MiB",
-      "vulkan": "device present"
-    }
+    "details": {}
   },
   "platform": {
-    "system": "Windows",
-    "release": "11",
-    "machine": "AMD64",
-    "python": "3.12.10"
+    "system": "Linux",
+    "release": "6.8.0-138-generic",
+    "machine": "x86_64",
+    "python": "3.12.3"
   },
   "recommendation": {
     "recommended_paths": [
@@ -33,14 +33,14 @@
       "03-integrate",
       "bonus/sweeps"
     ],
-    "model_key": "gemma4-e2b",
-    "model_choice_reason": "enough RAM for the default model",
-    "model_label": "Gemma 4 E2B",
-    "model_repo": "unsloth/gemma-4-E2B-it-GGUF",
-    "primary_model_file": "gemma-4-E2B-it-UD-Q4_K_XL.gguf",
-    "compare_model_file": "gemma-4-E2B-it-UD-Q2_K_XL.gguf",
-    "llama_cpp_backend": "CUDA",
-    "llama_cpp_cmake_flag": "-DGGML_CUDA=ON",
+    "model_key": "qwen35-0.8b",
+    "model_choice_reason": "chosen with LAB_MODEL",
+    "model_label": "Qwen3.5 0.8B",
+    "model_repo": "unsloth/Qwen3.5-0.8B-GGUF",
+    "primary_model_file": "Qwen3.5-0.8B-Q4_K_M.gguf",
+    "compare_model_file": "Qwen3.5-0.8B-UD-Q2_K_XL.gguf",
+    "llama_cpp_backend": "CPU",
+    "llama_cpp_cmake_flag": "",
     "llama_cpp_build": "b10488",
     "ram_sufficient": true,
     "fallback": null
