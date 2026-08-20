@@ -127,8 +127,26 @@ chưa chạy thêm và lặp lại mỗi cấu hình nhiều lần.
 
 ## 6. Bonus  *(optional — tối đa 20 điểm)*
 
-Tôi chưa thực hiện bonus; ưu tiên của lần chạy này là hoàn thiện và hiểu rõ toàn bộ
-base track.
+Tôi hoàn thành **B2** bằng `make sweep-batch`, đo sáu cặp logical batch
+(`-b`) và physical micro-batch (`-ub`) trên cùng Qwen3.5 0.8B, 4 CPU threads,
+`ngl=0`, với metric prefill `pp2048`.
+
+```
+before:  152.9 tok/s (-b 2048 -ub 512, mặc định của llama-bench)
+after:   160.4 tok/s (-b 256  -ub 256, tốt nhất trong sweep)
+speedup: 1.05x (tăng khoảng 4.9%)
+```
+
+Kết quả không tăng đơn điệu theo batch size: `1024/512` chỉ đạt 148.6 tok/s,
+thấp nhất trong sweep. Trên CPU 4 core, `256/256` có thể đã đủ lớn để khấu hao
+overhead mỗi bước nhưng vẫn giữ working set vừa với cache; batch lớn hơn làm tăng
+tranh chấp cache và memory bandwidth nên không tạo thêm throughput.
+
+Tôi chọn tạm thời `256/256`, nhưng phép đo này chưa chứng minh cấu hình đó tốt hơn
+cho server có cạnh tranh. Trước khi dùng production, tôi sẽ chạy load test cùng
+một workload cho `2048/512` và `256/256`, rồi so TTFT P95, E2E P95, RPS và
+`requests_deferred`. Nếu P95 hoặc queueing xấu đi, mức tăng throughput 4.9% không
+đủ để biện minh cho thay đổi.
 
 ---
 
